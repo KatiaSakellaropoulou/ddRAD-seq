@@ -1,0 +1,11 @@
+#We first have to unzip our files 
+
+(BOOKWORM)kat@skirit:\~$ nano untar.sh
+
+#!/bin/bash
+#PBS -N untar
+#PBS -l select=1:ncpus=1:mem=20gb:scratch_local=50gb
+#PBS -l walltime=03:00:00
+
+tar -xvf /storage/brno2/home/kat/X208SC25126877-Z01-F001.tar
+
