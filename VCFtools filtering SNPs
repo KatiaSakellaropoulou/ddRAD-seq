@@ -1,0 +1,10 @@
+#filtering  step 1
+
+module add vcftools
+
+vcftools --vcf populations.snps.vcf --out output --max-missing 0.05 --maf 0.02 --minDP 5 --recode \
+
+#filtering step 2
+#remove - removes individuals from a list (generated after checking for --missing-indv) (!no need to re-run gstacks)
+
+vcftools --vcf output.recode.vcf --out missing --missing-indv
