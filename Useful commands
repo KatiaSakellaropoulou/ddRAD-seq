@@ -1,0 +1,13 @@
+#To check files with size etc 
+
+ ls -ltrh
+
+#to check jobs
+-x -u kat
+
+# to check exit status
+
+-xf 19761310.pbs-m1.metacentrum.cz | grep "Exit_status"
+
+#to see if its still running
+qstat -u kat
