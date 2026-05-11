@@ -1,0 +1,22 @@
+#gstacks
+
+#PBS -N gstacks_phylogeny_cam
+#PBS -l select=1:ncpus=4:mem=20gb:scratch_local=100gb
+#PBS -l walltime=3:00:00
+
+trap 'clean_scratch' TERM EXIT
+
+cd "$SCRATCHDIR" || exit 1
+
+cp -r /storage/brno2/home/kat/align/
+cp /storage/brno2/home/kat/popmap/popmap_phylogeny_cam.txt .
+
+
+module add stacks
+
+gstacks -I align \
+-M popmap_phylogeny_cam.txt \
+-O gstacks_phylogeny_cam_output \
+-t 4 \
+
+cp -r gstacks_phylogeny_cam_output /storage/brno2/home/kat/popmap_phylogeny || { echo "Copy failed!"; exit 1; }
