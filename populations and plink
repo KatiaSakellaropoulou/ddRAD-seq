@@ -1,0 +1,14 @@
+#populations and plink ( for snp calling and filtering)
+first, run populations
+
+
+#PBS -N populations_popstructure_unlinked
+#PBS -l select=1:ncpus=1:mem=40gb:scratch_local=50gb
+#PBS -l walltime=00:30:00
+
+module add stacks
+populations -P  /storage/brno2/home/kat/popmap_popstructure/gstacks_popstructure_output \
+-O /storage/brno2/home/kat/popmap_popstructure/populations_popstructure_unlinked_output \
+-t 2 -M /storage/brno2/home/kat/popmap/gstacks_popstructure.txt --structure --plink --vcf 
+
+add this at the end for unlinked SPNs: --write-single-snp
