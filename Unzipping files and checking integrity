@@ -9,3 +9,8 @@
 
 tar -xvf /storage/brno2/home/kat/X208SC25126877-Z01-F001.tar
 
+#After I do the untar we need to check if the code for every file is the same, so we use:
+
+md5sum file
+
+#then i check the two md5 sums.
