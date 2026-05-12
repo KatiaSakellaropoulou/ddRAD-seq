@@ -1,3 +1,4 @@
+```
 #We need to check for the quality of our reads. Since we have lots of PE reads, we can create a script with a loop
 
 #fastqc loop
@@ -15,3 +16,6 @@ for file in $input_dir/*.fq.gz; do
     echo "Running FastQC on $file"
     fastqc -o $output_dir $file
 done
+```
+
+dsadsa
