@@ -1,0 +1,6 @@
+wget https://raw.githubusercontent.com/edgardomortiz/vcf2phylip/master/vcf2phylip.py
+chmod +x vcf2phylip.py
+
+module add python
+
+python3 vcf2phylip.py -i /storage/brno2/home/kat/gstacks/populations_output_geno20_maf05_all/populations.snps.vcf -f
