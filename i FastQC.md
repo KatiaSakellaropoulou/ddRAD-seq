@@ -1,8 +1,9 @@
-We can check just one file R1 and R2 to check if the sequencing was okay.
-We also check after the trimmomatic to make sure that the adapters are gone.
-```
-#We need to check for the quality of our reads. Since we have lots of PE reads, we can create a script with a loop
+We can check just some files R1 and R2 to check if the sequencing per base quality is okay.
+We also check one or two files after the trimmomatic to make sure that the adapters are gone and everything looks good.
 
+We need to check for the quality of our reads. Since we have lots of PE reads, we can create a script with a loop
+
+```
 #fastqc loop
 
 #PBS -N fastqc_loop
