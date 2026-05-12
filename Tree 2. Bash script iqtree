@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -N iqtree_modeltest
+#PBS -l select=1:ncpus=8:mem=16gb:scratch_local=5gb
+#PBS -l walltime=08:00:00
+
+module add iqtree
+
+cd "$SCRATCHDIR" || exit 1
+cp /storage/brno2/home/kat/populations.snps.min4.fasta .
+
+
+iqtree -s populations.snps.min4.fasta -st DNA -m MFP -bb 1000 -alrt 1000 -nt AUTO -ntmax 8
+
+echo "Output files:"
+ls -lh populations.snps.min4.fasta.*
+cp populations.snps.min4.fasta.* /storage/brno2/home/kat/
